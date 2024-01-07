@@ -1,19 +1,58 @@
-# GreenGuard
-#### Student Name: Oksana Bazylieva   Student ID: 20104122
+WeatherTop
 
-This proposal presents a project centered around Raspberry Pi, designed to develop a Smart Plant Monitoring System. The objective is to offer users a user-friendly and effective method for overseeing and nurturing their plants' well-being through a centralized platform. This system finds utility both in professional settings like Botanical Gardens and in domestic environments, allowing users to monitor humidity levels near their plants. The outcomes of this monitoring process will be promptly relayed to the user's device, accompanied by actionable messages.
+Student Name: Oksana Bazylieva
+Student ID: 20104122
 
-## Tools, Technologies and Equipment
-Protocols/Devices:
-MQTT (Message Queuing Telemetry Transport): Utilized for efficient communication between the Raspberry Pi and connected sensors, enabling real-time data exchange.
+Project Overview
 
-Sensor: Raspberry Pi Sensor Board to measure humidity
+WeatherTop is a local weather station project designed to gather real-time environmental data, including temperature, pressure, and humidity, using a Raspberry Pi. The project utilizes Firebase for cloud-based storage, enabling seamless data retrieval and presentation on a frontend interface. Additionally, a Linux cron job ensures that the Raspberry Pi script runs automatically every time the device is powered on, ensuring continuous and autonomous data collection.
 
-Programming Language: Python
+Tools, Technologies, and Equipment
 
-Integrated Development Environment (IDE): Visual Studio Code
+Sensors:
 
-Cloud Platform: AWS IoT
+Raspberry Pi Sensor Board: Measures temperature, pressure, and humidity in the surrounding environment.
+Programming Language:
 
-## Project Repository
-https://github.com/oksanabaza/IoT
+Python: Used for scripting the Raspberry Pi to interact with sensors and process data.
+Integrated Development Environment (IDE):
+
+Visual Studio Code: The chosen IDE for developing, testing, and debugging the Python code on the Raspberry Pi.
+Cloud Platform:
+
+Firebase: Provides a robust cloud platform for storing and managing real-time environmental data collected by the WeatherTop station.
+Project Repository
+
+GitHub Repository
+
+Project Components and Functionality
+
+Raspberry Pi Scripting (Python):
+
+Utilizes Python for interacting with the Raspberry Pi Sensor Board.
+Gathers real-time data on temperature, pressure, and humidity from the sensors.
+Firebase Integration:
+
+Connects to Firebase for storing and managing real-time environmental data.
+Enables secure and scalable cloud storage of the collected data.
+Frontend Interface:
+
+Develops a frontend interface for users to monitor real-time environmental parameters.
+Displays current temperature, pressure, and humidity values.
+Cron Job:
+
+Sets up a Linux cron job to automatically run the Raspberry Pi script on device startup.
+Ensures continuous data collection without manual intervention.
+Usage Scenario
+
+Automatic Data Collection:
+
+The Linux cron job initiates the WeatherTop script on Raspberry Pi startup.
+Real-time environmental data, including temperature, pressure, and humidity, is sent to Firebase.
+Firebase Data Storage:
+
+Firebase securely stores and manages the real-time data collected by the WeatherTop station.
+Frontend Monitoring:
+
+Users access the frontend interface to monitor current environmental parameters.
+The interface provides a user-friendly display of temperature, pressure, and humidity values.
