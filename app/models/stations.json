@@ -1,0 +1,106 @@
+{
+  "file": "./models/stations.json",
+  "stations": [
+    {
+      "name": "Dunmore",
+      "_id": "352490d6-20a7-45f7-87b6-38ff9384c5ad"
+    },
+    {
+      "name": "Tramore",
+      "_id": "d457949e-00a4-4c67-931d-e4cda4e1bd07"
+    },
+    {
+      "name": "Kilkenny",
+      "_id": "16b75dc8-927f-48ae-a052-0e42fbe5579e"
+    },
+    {
+      "name": "ewgEG",
+      "_id": "0a176ebb-097c-4a5d-a2e2-f8adef58007f"
+    },
+    {
+      "name": "weathertop",
+      "_id": "83196d19-1b6e-4467-ab21-da7e33309450"
+    },
+    {
+      "name": "atest",
+      "_id": "db2a987d-c50c-4832-a708-b572059f9136"
+    },
+    {
+      "name": "jj",
+      "_id": "b1812b83-95ed-4149-9258-e72b2e21cba0"
+    },
+    {
+      "name": "Y-station",
+      "latitude": "13.45",
+      "longitude": "45.78",
+      "_id": "eb92ff29-f679-4f39-a9b9-dd6223b26c5a"
+    },
+    {
+      "name": "admin",
+      "latitude": "13.45",
+      "longitude": "45.78",
+      "_id": "72c0291b-d4a5-48eb-95a8-df0a319992bd"
+    },
+    {
+      "name": "test",
+      "latitude": "13.45",
+      "longitude": "45.78",
+      "_id": "fc4629a8-4b84-41ca-a575-4cf1e3565844"
+    },
+    {
+      "name": "admin",
+      "latitude": "13.45",
+      "longitude": "45.78",
+      "_id": "b2e208a3-b217-4f87-8778-ed2d91f09d0b"
+    },
+    {
+      "name": "test",
+      "latitude": "",
+      "longitude": "45.78",
+      "userid": "e096ec4b-f64a-4153-a6e0-e64a6e1324f5",
+      "_id": "a32a5027-5bc6-4486-bf9e-2a11df484498"
+    },
+    {
+      "name": "Dunmore",
+      "latitude": "52.1528",
+      "longitude": "-6.9948",
+      "userid": "909e1285-f5df-42e2-9211-30c7c37c6445",
+      "_id": "3d00eb53-87d4-45dc-9d91-94b23ab54681"
+    },
+    {
+      "name": "Annestown",
+      "latitude": "52.1406",
+      "longitude": "-7.2719",
+      "userid": "909e1285-f5df-42e2-9211-30c7c37c6445",
+      "_id": "fc1dee60-ec9d-4966-83e5-ab2e0d301bb4"
+    },
+    {
+      "name": "London",
+      "latitude": "51.5072",
+      "longitude": "0.1276",
+      "userid": "909e1285-f5df-42e2-9211-30c7c37c6445",
+      "_id": "d77ccaca-ec8b-49c5-b487-d4cc9cf806da"
+    },
+    {
+      "name": "Paris",
+      "latitude": "48.8566",
+      "longitude": "2.3522",
+      "userid": "909e1285-f5df-42e2-9211-30c7c37c6445",
+      "_id": "0c2dcf88-5296-4c76-867b-948cf5358a92"
+    },
+    {
+      "name": "Toronto",
+      "latitude": "43.7001",
+      "longitude": "-79.4163",
+      "userid": "909e1285-f5df-42e2-9211-30c7c37c6445",
+      "_id": "d113e2ba-5c91-41ea-998e-eb361d3cdc8d"
+    },
+    {
+      "name": "Zaporizhzhya",
+      "latitude": "47.8167",
+      "longitude": "35.1833",
+      "userid": "909e1285-f5df-42e2-9211-30c7c37c6445",
+      "_id": "ba337bdd-173b-4157-9b64-8065f4d874e0"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{{> menu active="local"}}
+
+<section class="box is-3 has-text-centered about-section">
+  <h3 class="title">
+    Local Weather from Raspberry PI
+  </h3>
+<div class="box" id="chart" ></div>
+  <!-- Add a loading spinner -->
+  <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+  <table class="table is-fullwidth" style="display: none;" id="weatherTable">
+    <thead>
+      <tr class='th'>
+        <th>Date</th>
+        <th>Temperature °C</th>
+        <th>Humidity %</th>
+        <th>Pressure hPa</th>
+      </tr>
+    </thead>
+    <tbody id="weatherData"></tbody>
+  </table>
+</section>
+<script>
+  // Assuming you have data from your server in JavaScript variables
+  const trendLabels = ['18:44:46', '18:45:02', '18:45:17']; // Replace with your actual labels
+  const tempTrendData = [20, 22, 18]; // Replace with your actual temperature data
+
+  // Create the Frappe Chart Data object
+  const data = {
+    labels: trendLabels,
+    datasets: [
+      {
+        name: "Temperature",
+        type: "line",
+        values: tempTrendData,
+      }
+    ]
+  };
+
+  // Create Frappe Chart using the data
+  const chart = new frappe.Chart("#chart", {
+    title: "Temperature Trend",
+    data: data,
+    type: 'line',
+    height: 250,
+  });
+</script>
+
+<script>
+// web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDkp9UnpW4Qm-WcXe26ADKajVKDE4ioXys",
+  authDomain: "weather-accbe.firebaseapp.com",
+  databaseURL: "https://weather-accbe-default-rtdb.firebaseio.com",
+  projectId: "weather-accbe",
+  storageBucket: "weather-accbe.appspot.com",
+  messagingSenderId: "430839460245",
+  appId: "1:430839460245:web:07a7b2172e36d71e2b869c"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to the database service
+const database = firebase.database();
+
+// Create weather database reference
+const weatherRef = database.ref("weather");
+
+// Show loading spinner
+const loadingSpinner = document.getElementById("loadingSpinner");
+loadingSpinner.style.display = "block";
+
+// Hide the table initially
+const weatherTable = document.getElementById("weatherTable");
+
+// Sync on any updates to the weather DB. THIS CODE RUNS EVERY TIME AN UPDATE OCCURS ON THE DB.
+weatherRef.on("value", function(snapshot) {
+  const weatherDataContainer = document.getElementById("weatherData");
+  weatherDataContainer.innerHTML = ""; // Clear existing data
+
+  snapshot.forEach(function(childSnapshot) {
+    const temperature = childSnapshot.val()["temperature"].toFixed(2);
+    const humidity = childSnapshot.val()["humidity"].toFixed(2);
+    const pressure = childSnapshot.val()["pressure"].toFixed(2);
+    const time = childSnapshot.val()["timestamp"];
+
+    // Create table row and cells for each record
+    const tableRow = document.createElement("tr");
+    tableRow.innerHTML = `
+      <td>${time}</td>
+      <td>${temperature} °C</td>
+      <td>${humidity} %</td>
+      <td>${pressure} hPa</td>
+    `;
+    weatherDataContainer.appendChild(tableRow);
+  });
+
+  // Show the table and hide loading spinner after data is loaded
+  weatherTable.style.display = "table";
+  loadingSpinner.style.display = "none";
+});
+</script>
